@@ -1,6 +1,11 @@
 import {IOrderStatus} from "user-credits";
 
 export class OrderStatus implements IOrderStatus {
+    constructor(date: Date, message: string, status: "pending" | "paid" | "refused" | "error") {
+        this._date = date;
+        this._message = message;
+        this._status = status;
+    }
     protected _date: Date;
     protected _message: string;
     protected _status: "pending" | "paid" | "refused" | "error";

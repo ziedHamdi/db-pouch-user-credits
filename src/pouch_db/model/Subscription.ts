@@ -3,6 +3,18 @@ import {ISubscription, OfferCycle} from "user-credits";
 import {BaseEntity} from "./BaseEntity";
 
 export class Subscription extends BaseEntity implements ISubscription<string> {
+    constructor(id: string, customCycle: number | null, cycle: OfferCycle, name: string, offerGroup: string, offerId: string, orderId: string, starts: Date, status: "pending" | "paid" | "refused" | "error", tokens: number) {
+        super(id);
+        this._customCycle = customCycle;
+        this._cycle = cycle;
+        this._name = name;
+        this._offerGroup = offerGroup;
+        this._offerId = offerId;
+        this._orderId = orderId;
+        this._starts = starts;
+        this._status = status;
+        this._tokens = tokens;
+    }
     protected _customCycle: number | null;
     protected _cycle: OfferCycle;
     protected _name: string;

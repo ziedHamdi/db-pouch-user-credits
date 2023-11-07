@@ -3,6 +3,23 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Offer = void 0;
 const BaseEntity_1 = require("./BaseEntity");
 class Offer extends BaseEntity_1.BaseEntity {
+    constructor(id, customCycle, cycle, hasDependentOffers, kind, name, offerGroup, overridingKey, popular, price, quantityLimit, tags, tokenCount, unlockedBy, weight) {
+        super(id);
+        this._customCycle = customCycle;
+        this._cycle = cycle;
+        this._hasDependentOffers = hasDependentOffers;
+        this._kind = kind;
+        this._name = name;
+        this._offerGroup = offerGroup;
+        this._overridingKey = overridingKey;
+        this._popular = popular;
+        this._price = price;
+        this._quantityLimit = quantityLimit;
+        this._tags = tags;
+        this._tokenCount = tokenCount;
+        this._unlockedBy = unlockedBy;
+        this._weight = weight;
+    }
     get customCycle() {
         return this._customCycle;
     }

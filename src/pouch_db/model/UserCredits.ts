@@ -5,6 +5,12 @@ import {BaseEntity} from "./BaseEntity";
 import {Subscription} from "./Subscription";
 
 export class UserCredits extends BaseEntity implements IUserCredits<string> {
+    constructor(id: string, offers: ActivatedOffer[], subscriptions: Subscription[], userId: string) {
+        super(id);
+        this._offers = offers;
+        this._subscriptions = subscriptions;
+        this._userId = userId;
+    }
     protected _offers: ActivatedOffer[];
     protected _subscriptions: Subscription[];
     protected _userId: string;

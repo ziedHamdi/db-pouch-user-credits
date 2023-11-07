@@ -3,6 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TokenTimetable = void 0;
 const BaseEntity_1 = require("./BaseEntity");
 class TokenTimetable extends BaseEntity_1.BaseEntity {
+    constructor(id, createdAt, tokens, userId) {
+        super(id);
+        this._createdAt = createdAt;
+        this._tokens = tokens;
+        this._userId = userId;
+    }
     get createdAt() {
         return this._createdAt;
     }

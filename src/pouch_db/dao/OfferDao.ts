@@ -1,3 +1,4 @@
+import * as PouchDB from 'pouchdb';
 import {IFindOffersParams, IOfferDao} from "user-credits";
 
 import {Offer} from "../model";

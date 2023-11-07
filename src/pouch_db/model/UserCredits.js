@@ -3,6 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserCredits = void 0;
 const BaseEntity_1 = require("./BaseEntity");
 class UserCredits extends BaseEntity_1.BaseEntity {
+    constructor(id, offers, subscriptions, userId) {
+        super(id);
+        this._offers = offers;
+        this._subscriptions = subscriptions;
+        this._userId = userId;
+    }
     get offers() {
         return this._offers;
     }

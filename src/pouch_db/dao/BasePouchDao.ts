@@ -98,7 +98,7 @@ export class BasePouchDao<D extends object> implements IBaseDao<D> {
       }
       return null;
     } catch (error) {
-      throw new Error(`Error updating document: ${error.message}`);
+      throw new Error(`Error updating document: ${(error as Error).message}`);
     }
   }
 }

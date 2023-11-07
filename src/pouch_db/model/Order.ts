@@ -4,6 +4,27 @@ import {BaseEntity} from "./BaseEntity";
 import {OrderStatus} from "./OrderStatus";
 
 export class Order extends BaseEntity implements IOrder<string> {
+    constructor(id: string, country: string | null, createdAt: Date, currency: string, customCycle: number | null, cycle: OfferCycle, history: [OrderStatus] | null, offerGroup: string, offerId: string, paymentIntentId: string | null, paymentIntentSecret: string | null, quantity: number, status: "pending" | "paid" | "refused" | "error", taxRate: number | null, tokenCount: number | null, total: number, updatedAt: Date, userId: string) {
+        super(id);
+        this._country = country;
+        this._createdAt = createdAt;
+        this._currency = currency;
+        this._customCycle = customCycle;
+        this._cycle = cycle;
+        this._history = history;
+        this._offerGroup = offerGroup;
+        this._offerId = offerId;
+        this._paymentIntentId = paymentIntentId;
+        this._paymentIntentSecret = paymentIntentSecret;
+        this._quantity = quantity;
+        this._status = status;
+        this._taxRate = taxRate;
+        this._tokenCount = tokenCount;
+        this._total = total;
+        this._updatedAt = updatedAt;
+        this._userId = userId;
+    }
+
     protected _country: string | null;
     protected _createdAt: Date;
     protected _currency: string;

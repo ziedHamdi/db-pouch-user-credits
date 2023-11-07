@@ -1,4 +1,5 @@
-import {IUserCreditsDao} from "user-credits";
+import * as PouchDB from 'pouchdb';
+import {IUserCredits, IUserCreditsDao} from "user-credits";
 
 import {UserCredits} from "../model";
 import {BasePouchDao} from "./BasePouchDao";
@@ -8,6 +9,11 @@ export class UserCreditsDao extends BasePouchDao<UserCredits> implements IUserCr
         protected db: PouchDB.Database
     ) {
         super(db, "user_credits");
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    async findByUserId(userId: string): Promise<IUserCredits<string>> {
+        return (await  this.find( {userId} ))?.[0] as unknown as UserCredits;
     }
 
 }

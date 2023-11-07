@@ -3,6 +3,26 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Order = void 0;
 const BaseEntity_1 = require("./BaseEntity");
 class Order extends BaseEntity_1.BaseEntity {
+    constructor(id, country, createdAt, currency, customCycle, cycle, history, offerGroup, offerId, paymentIntentId, paymentIntentSecret, quantity, status, taxRate, tokenCount, total, updatedAt, userId) {
+        super(id);
+        this._country = country;
+        this._createdAt = createdAt;
+        this._currency = currency;
+        this._customCycle = customCycle;
+        this._cycle = cycle;
+        this._history = history;
+        this._offerGroup = offerGroup;
+        this._offerId = offerId;
+        this._paymentIntentId = paymentIntentId;
+        this._paymentIntentSecret = paymentIntentSecret;
+        this._quantity = quantity;
+        this._status = status;
+        this._taxRate = taxRate;
+        this._tokenCount = tokenCount;
+        this._total = total;
+        this._updatedAt = updatedAt;
+        this._userId = userId;
+    }
     get country() {
         return this._country;
     }

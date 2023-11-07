@@ -3,6 +3,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Subscription = void 0;
 const BaseEntity_1 = require("./BaseEntity");
 class Subscription extends BaseEntity_1.BaseEntity {
+    constructor(id, customCycle, cycle, name, offerGroup, offerId, orderId, starts, status, tokens) {
+        super(id);
+        this._customCycle = customCycle;
+        this._cycle = cycle;
+        this._name = name;
+        this._offerGroup = offerGroup;
+        this._offerId = offerId;
+        this._orderId = orderId;
+        this._starts = starts;
+        this._status = status;
+        this._tokens = tokens;
+    }
     get customCycle() {
         return this._customCycle;
     }

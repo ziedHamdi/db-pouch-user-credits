@@ -1,4 +1,4 @@
-
+import * as PouchDB from 'pouchdb';
 import {
     IDaoFactory,
     IOffer,
