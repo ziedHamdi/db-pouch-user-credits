@@ -3,20 +3,20 @@ import {IOffer, OfferCycle} from "user-credits";
 import {BaseEntity} from "./BaseEntity";
 
 export class Offer extends BaseEntity implements IOffer<string> {
-    private _customCycle: number | null;
-    private _cycle: OfferCycle;
-    private _hasDependentOffers: boolean;
-    private _kind: "subscription" | "tokens" | "expertise";
-    private _name: string;
-    private _offerGroup: string;
-    private _overridingKey: string;
-    private _popular: number;
-    private _price: number;
-    private _quantityLimit: number | null;
-    private _tags: string[];
-    private _tokenCount: number | null;
-    private _unlockedBy: string[];
-    private _weight: number;
+    protected _customCycle: number | null;
+    protected _cycle: OfferCycle;
+    protected _hasDependentOffers: boolean;
+    protected _kind: "subscription" | "tokens" | "expertise";
+    protected _name: string;
+    protected _offerGroup: string;
+    protected _overridingKey: string;
+    protected _popular: number;
+    protected _price: number;
+    protected _quantityLimit: number | null;
+    protected _tags: string[];
+    protected _tokenCount: number | null;
+    protected _unlockedBy: string[];
+    protected _weight: number;
 
     get customCycle(): number | null {
         return this._customCycle;

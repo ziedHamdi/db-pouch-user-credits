@@ -1,4 +1,3 @@
-type ObjectId = Types.ObjectId;
 
 import {
     IDaoFactory,
@@ -14,11 +13,11 @@ import {
 
 import { OfferDao, OrderDao, TokenTimetableDao, UserCreditsDao } from "./index";
 
-export class PouchDbDaoFactory implements IDaoFactory<ObjectId> {
-    private readonly offerDao;
-    private readonly orderDao;
-    private readonly tokenTimetableDao;
-    private readonly userCreditsDao;
+export class PouchDbDaoFactory implements IDaoFactory<string> {
+    protected readonly offerDao;
+    protected readonly orderDao;
+    protected readonly tokenTimetableDao;
+    protected readonly userCreditsDao;
 
     constructor(public connection: PouchDB.Database) {
         this.offerDao = new OfferDao(connection);
@@ -27,22 +26,22 @@ export class PouchDbDaoFactory implements IDaoFactory<ObjectId> {
         this.userCreditsDao = new UserCreditsDao(connection);
     }
 
-    getOfferDao(): IOfferDao<ObjectId, IOffer<ObjectId>> {
+    getOfferDao(): IOfferDao<string, IOffer<string>> {
         return this.offerDao;
     }
 
-    getOrderDao(): IOrderDao<ObjectId, IOrder<ObjectId>> {
+    getOrderDao(): IOrderDao<string, IOrder<string>> {
         return this.orderDao;
     }
 
     getTokenTimetableDao(): ITokenTimetableDao<
-        ObjectId,
-        ITokenTimetable<ObjectId>
+        string,
+        ITokenTimetable<string>
         > {
         return this.tokenTimetableDao;
     }
 
-    getUserCreditsDao(): IUserCreditsDao<ObjectId, IUserCredits<ObjectId>> {
+    getUserCreditsDao(): IUserCreditsDao<string, IUserCredits<string>> {
         return this.userCreditsDao;
     }
 }

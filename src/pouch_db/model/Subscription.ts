@@ -3,15 +3,15 @@ import {ISubscription, OfferCycle} from "user-credits";
 import {BaseEntity} from "./BaseEntity";
 
 export class Subscription extends BaseEntity implements ISubscription<string> {
-    private _customCycle: number | null;
-    private _cycle: OfferCycle;
-    private _name: string;
-    private _offerGroup: string;
-    private _offerId: string;
-    private _orderId: string;
-    private _starts: Date;
-    private _status: "pending" | "paid" | "refused" | "error";
-    private _tokens: number;
+    protected _customCycle: number | null;
+    protected _cycle: OfferCycle;
+    protected _name: string;
+    protected _offerGroup: string;
+    protected _offerId: string;
+    protected _orderId: string;
+    protected _starts: Date;
+    protected _status: "pending" | "paid" | "refused" | "error";
+    protected _tokens: number;
 
     get customCycle(): number | null {
         return this._customCycle;

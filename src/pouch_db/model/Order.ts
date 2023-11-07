@@ -4,23 +4,23 @@ import {BaseEntity} from "./BaseEntity";
 import {OrderStatus} from "./OrderStatus";
 
 export class Order extends BaseEntity implements IOrder<string> {
-    private _country: string | null;
-    private _createdAt: Date;
-    private _currency: string;
-    private _customCycle: number | null;
-    private _cycle: OfferCycle;
-    private _history: [OrderStatus] | null;
-    private _offerGroup: string;
-    private _offerId: string;
-    private _paymentIntentId: string | null;
-    private _paymentIntentSecret: string | null;
-    private _quantity: number;
-    private _status: "pending" | "paid" | "refused" | "error";
-    private _taxRate: number | null;
-    private _tokenCount: number | null;
-    private _total: number;
-    private _updatedAt: Date;
-    private _userId: string;
+    protected _country: string | null;
+    protected _createdAt: Date;
+    protected _currency: string;
+    protected _customCycle: number | null;
+    protected _cycle: OfferCycle;
+    protected _history: [OrderStatus] | null;
+    protected _offerGroup: string;
+    protected _offerId: string;
+    protected _paymentIntentId: string | null;
+    protected _paymentIntentSecret: string | null;
+    protected _quantity: number;
+    protected _status: "pending" | "paid" | "refused" | "error";
+    protected _taxRate: number | null;
+    protected _tokenCount: number | null;
+    protected _total: number;
+    protected _updatedAt: Date;
+    protected _userId: string;
 
     get country(): string | null {
         return this._country;

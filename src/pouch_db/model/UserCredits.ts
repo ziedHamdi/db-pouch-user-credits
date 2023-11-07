@@ -5,9 +5,9 @@ import {BaseEntity} from "./BaseEntity";
 import {Subscription} from "./Subscription";
 
 export class UserCredits extends BaseEntity implements IUserCredits<string> {
-    private _offers: ActivatedOffer[];
-    private _subscriptions: Subscription[];
-    private _userId: string;
+    protected _offers: ActivatedOffer[];
+    protected _subscriptions: Subscription[];
+    protected _userId: string;
 
     get offers(): ActivatedOffer[] {
         return this._offers;

@@ -1,9 +1,9 @@
 import {IOrderStatus} from "user-credits";
 
 export class OrderStatus implements IOrderStatus {
-    private _date: Date;
-    private _message: string;
-    private _status: "pending" | "paid" | "refused" | "error";
+    protected _date: Date;
+    protected _message: string;
+    protected _status: "pending" | "paid" | "refused" | "error";
 
     get date(): Date {
         return this._date;

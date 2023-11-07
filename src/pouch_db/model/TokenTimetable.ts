@@ -3,9 +3,9 @@ import {ITokenTimetable} from "user-credits";
 import {BaseEntity} from "./BaseEntity";
 
 export class TokenTimetable extends BaseEntity implements ITokenTimetable<string> {
-    private _createdAt: Date;
-    private _tokens: number;
-    private _userId: string;
+    protected _createdAt: Date;
+    protected _tokens: number;
+    protected _userId: string;
 
     get createdAt(): Date {
         return this._createdAt;
