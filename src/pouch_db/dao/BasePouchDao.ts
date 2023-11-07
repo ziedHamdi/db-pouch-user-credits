@@ -1,4 +1,8 @@
+import * as PouchDB from 'pouchdb';
+import * as pouchdbFind from 'pouchdb-find';
 import { IBaseDao } from "user-credits";
+
+PouchDB.plugin(pouchdbFind);
 
 export class BasePouchDao<D extends object> implements IBaseDao<D> {
   constructor(
