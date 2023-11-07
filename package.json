@@ -8,6 +8,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint . --ext .ts",
+    "build": "rmdir /s /q .\\dist & npx tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -17,12 +18,18 @@
     "bson": "^6.1.0",
     "dotenv": "^16.3.1",
     "pouchdb": "^8.0.1",
-    "user-credits": "0.11.1-alpha"
+    "user-credits": "^0.11.1-alpha"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.10.0",
     "@typescript-eslint/parser": "^6.10.0",
     "eslint": "^8.53.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-sort-destructure-keys": "^1.5.0",
+    "eslint-plugin-sort-keys-fix": "^1.1.2",
+    "eslint-plugin-typescript-sort-keys": "^3.0.0",
     "typescript": "^5.2.2"
   }
 }

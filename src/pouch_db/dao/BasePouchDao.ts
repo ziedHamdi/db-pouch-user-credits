@@ -12,12 +12,12 @@ export class BasePouchDao<D extends object> implements IBaseDao<D> {
 
   async count(query: object): Promise<number> {
     try {
-      const result = await this.db.query('your-design-document/count', {
-        startkey: query,
+      const result = await this.db.query(this.collection+'/count', {
         endkey: query,
+        startkey: query,
       });
       return result.rows[0].value;
-    } catch (error) {
+    } catch (error: Error) {
       throw new Error(`Error counting documents: ${error.message}`);
     }
   }
@@ -47,9 +47,9 @@ export class BasePouchDao<D extends object> implements IBaseDao<D> {
   async find(query: object): Promise<D[]> {
     try {
       const result = await this.db.query('your-design-document/find', {
-        startkey: query,
         endkey: query,
         include_docs: true,
+        startkey: query,
       });
       return result.rows.map(row => row.doc as D);
     } catch (error) {
@@ -73,10 +73,10 @@ export class BasePouchDao<D extends object> implements IBaseDao<D> {
   async findOne(query: object): Promise<D | null> {
     try {
       const result = await this.db.query('your-design-document/find', {
-        startkey: query,
         endkey: query,
-        limit: 1,
         include_docs: true,
+        limit: 1,
+        startkey: query,
       });
       if (result.rows.length > 0) {
         return result.rows[0].doc as D;

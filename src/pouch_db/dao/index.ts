@@ -1,1 +1,6 @@
 export {BasePouchDao} from './BasePouchDao'
+export {OfferDao} from './OfferDao'
+export {OrderDao} from './OrderDao'
+export {TokenTimetableDao} from './TokenTimetableDao'
+export {PouchDbDaoFactory} from './PouchDbDaoFactory'
+export {UserCreditsDao} from './UserCreditsDao'
