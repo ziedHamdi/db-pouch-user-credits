@@ -1,0 +1,24 @@
+{
+  "name": "db-pouch-user-credits",
+  "author": "",
+  "type": "module",
+  "version": "0.0.1-alpha",
+  "license": "ISC",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "dependencies": {
+    "@types/pouchdb": "^6.4.2",
+    "awilix": "^9.0.0",
+    "bson": "^6.1.0",
+    "dotenv": "^16.3.1",
+    "pouchdb": "^8.0.1",
+    "user-credits": "0.11.1-alpha"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}

@@ -1,0 +1,1 @@
+export {BasePouchDao} from './BasePouchDao'
