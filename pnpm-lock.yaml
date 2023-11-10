@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@user-credits/core':
+    specifier: ^0.12.6-alpha
+    version: 0.12.6-alpha
   awilix:
     specifier: ^9.0.0
     version: 9.0.0
@@ -23,9 +26,6 @@ dependencies:
   relational-pouch:
     specifier: ^4.0.4
     version: 4.0.4(pouchdb-find@8.0.1)
-  user-credits:
-    specifier: ^0.11.1-alpha
-    version: 0.11.1-alpha
 
 devDependencies:
   '@types/pouchdb':
@@ -540,6 +540,24 @@ packages:
   /@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
+
+  /@user-credits/core@0.12.6-alpha:
+    resolution: {integrity: sha512-a39/KdChz98QBQv5l8mjOcdSLszh2ssSPieJejLjXVlM5HWWJl3aWi1qfthzHwWUpOaxkn1mHkvR0E60jW/Qww==}
+    engines: {node: '>=18'}
+    dependencies:
+      awilix: 9.0.0
+      bson: 6.2.0
+      dotenv: 16.3.1
+      mongoose: 7.6.4
+      stripe: 13.11.0
+    transitivePeerDependencies:
+      - '@aws-sdk/credential-providers'
+      - '@mongodb-js/zstd'
+      - kerberos
+      - mongodb-client-encryption
+      - snappy
+      - supports-color
+    dev: false
 
   /abort-controller@3.0.0:
     resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}
@@ -2289,24 +2307,6 @@ packages:
     dependencies:
       querystringify: 2.2.0
       requires-port: 1.0.0
-    dev: false
-
-  /user-credits@0.11.1-alpha:
-    resolution: {integrity: sha512-kW/Pa9Zge3YuQ0omYu2MBFEfhOyrtJ0gn4jbtxcVNVLafyEQhOZSU8lFeApec2L92ODUJyxTVUBM3aUc1uz/gw==}
-    engines: {node: '>=18'}
-    dependencies:
-      awilix: 9.0.0
-      bson: 6.2.0
-      dotenv: 16.3.1
-      mongoose: 7.6.4
-      stripe: 13.11.0
-    transitivePeerDependencies:
-      - '@aws-sdk/credential-providers'
-      - '@mongodb-js/zstd'
-      - kerberos
-      - mongodb-client-encryption
-      - snappy
-      - supports-color
     dev: false
 
   /util-deprecate@1.0.2:

@@ -1,4 +1,4 @@
-import {IOrderStatus} from "user-credits";
+import {IOrderStatus} from "@user-credits/core";
 
 export class OrderStatus implements IOrderStatus {
     constructor(date: Date, message: string, status: "pending" | "paid" | "refused" | "error") {

@@ -1,5 +1,5 @@
+import {IOrderDao} from "@user-credits/core";
 import * as PouchDB from 'pouchdb';
-import {IOrderDao} from "user-credits";
 
 import {Order} from "../model";
 import {BasePouchDao} from "./BasePouchDao";

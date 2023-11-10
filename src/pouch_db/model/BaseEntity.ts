@@ -1,4 +1,4 @@
-import {IBaseEntity} from "user-credits";
+import {IBaseEntity} from "@user-credits/core";
 
 export class BaseEntity implements IBaseEntity<string> {
     constructor(id: string) {

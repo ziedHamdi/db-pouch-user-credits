@@ -1,4 +1,3 @@
-import * as PouchDB from 'pouchdb';
 import {
     IDaoFactory,
     IOffer,
@@ -9,7 +8,8 @@ import {
     ITokenTimetableDao,
     IUserCredits,
     IUserCreditsDao,
-} from "user-credits";
+} from "@user-credits/core";
+import * as PouchDB from 'pouchdb';
 
 import { OfferDao, OrderDao, TokenTimetableDao, UserCreditsDao } from "./index";
 

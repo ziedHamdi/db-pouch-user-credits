@@ -1,4 +1,4 @@
-import {ITokenTimetable} from "user-credits";
+import {ITokenTimetable} from "@user-credits/core";
 
 import {BaseEntity} from "./BaseEntity";
 

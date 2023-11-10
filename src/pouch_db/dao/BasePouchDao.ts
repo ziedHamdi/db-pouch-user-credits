@@ -1,10 +1,10 @@
+import type { IBaseDao } from "@user-credits/core";
 import * as PouchDB from 'pouchdb';
-import * as pouchdbFind from 'pouchdb-find';
-import { IBaseDao } from "user-credits";
+// import * as pouchdbFind from 'pouchdb-find';
+//
+// PouchDB.plugin(pouchdbFind);
 
-PouchDB.plugin(pouchdbFind);
-
-export class BasePouchDao<D extends object> implements IBaseDao<D> {
+export class BasePouchDao<D extends object> implements IBaseDao<string, D> {
   constructor(
     protected db: PouchDB.Database,
     protected collection: string,
@@ -21,8 +21,8 @@ export class BasePouchDao<D extends object> implements IBaseDao<D> {
         startkey: query,
       });
       return result.rows[0].value;
-    } catch (error: Error) {
-      throw new Error(`Error counting documents: ${error.message}`);
+    } catch (error) {
+      throw new Error(`Error counting documents: ${(error as Error).message}`);
     }
   }
 
@@ -31,20 +31,23 @@ export class BasePouchDao<D extends object> implements IBaseDao<D> {
       const response = await this.db.put(data);
       return await this.findById(response.id) as D;
     } catch (error) {
-      throw new Error(`Error creating document: ${error.message}`);
+      throw new Error(`Error creating document: ${(error as Error).message}`);
     }
   }
 
   async deleteById(id: string): Promise<boolean> {
+    type Removable = {_id:string, _rev:string}
     try {
       const doc = await this.findById(id);
+
+      // Ensure that doc has _id and _rev properties
       if (doc) {
-        await this.db.remove(doc);
+        await this.db.remove(doc as Removable);
         return true;
       }
       return false;
     } catch (error) {
-      throw new Error(`Error deleting document: ${error.message}`);
+      throw new Error(`Error deleting document: ${(error as Error).message}`);
     }
   }
 
@@ -57,20 +60,20 @@ export class BasePouchDao<D extends object> implements IBaseDao<D> {
       });
       return result.rows.map(row => row.doc as D);
     } catch (error) {
-      throw new Error(`Error finding documents: ${error.message}`);
+      throw new Error(`Error finding documents: ${(error as Error).message}`);
     }
   }
 
-  async findById(id: object): Promise<D | null> {
+  async findById(id: string): Promise<D | null> {
     try {
       const doc = await this.db.get(id);
       return doc as D;
     } catch (error) {
-      if (error.status === 404) {
-        return null;
-      } else {
-        throw new Error(`Error finding document by ID: ${error.message}`);
-      }
+      // if ((error as PouchDB.Error).status === 404) {
+      //   return null;
+      // } else {
+        throw new Error(`Error finding document by ID: ${(error as Error).message}`);
+      // }
     }
   }
 
@@ -88,7 +91,7 @@ export class BasePouchDao<D extends object> implements IBaseDao<D> {
         return null;
       }
     } catch (error) {
-      throw new Error(`Error finding one document: ${error.message}`);
+      throw new Error(`Error finding one document: ${(error as Error).message}`);
     }
   }
 
@@ -102,7 +105,7 @@ export class BasePouchDao<D extends object> implements IBaseDao<D> {
       }
       return null;
     } catch (error) {
-      throw new Error(`Error updating document: ${(error as Error).message}`);
+      throw new Error(`Error updating document: ${((error as Error) as Error).message}`);
     }
   }
 }

@@ -1,10 +1,10 @@
-import {IOrder, OfferCycle} from "user-credits";
+import {IOfferCycle,IOrder} from "@user-credits/core";
 
 import {BaseEntity} from "./BaseEntity";
 import {OrderStatus} from "./OrderStatus";
 
 export class Order extends BaseEntity implements IOrder<string> {
-    constructor(id: string, country: string | null, createdAt: Date, currency: string, customCycle: number | null, cycle: OfferCycle, history: [OrderStatus] | null, offerGroup: string, offerId: string, paymentIntentId: string | null, paymentIntentSecret: string | null, quantity: number, status: "pending" | "paid" | "refused" | "error", taxRate: number | null, tokenCount: number | null, total: number, updatedAt: Date, userId: string) {
+    constructor(id: string, country: string | null, createdAt: Date, currency: string, customCycle: number | null, cycle: IOfferCycle, history: [OrderStatus] | null, offerGroup: string, offerId: string, paymentIntentId: string | null, paymentIntentSecret: string | null, quantity: number, status: "pending" | "paid" | "refused" | "error", taxRate: number | null, tokenCount: number | null, total: number, updatedAt: Date, userId: string) {
         super(id);
         this._country = country;
         this._createdAt = createdAt;
@@ -29,7 +29,7 @@ export class Order extends BaseEntity implements IOrder<string> {
     protected _createdAt: Date;
     protected _currency: string;
     protected _customCycle: number | null;
-    protected _cycle: OfferCycle;
+    protected _cycle: IOfferCycle;
     protected _history: [OrderStatus] | null;
     protected _offerGroup: string;
     protected _offerId: string;
@@ -75,11 +75,11 @@ export class Order extends BaseEntity implements IOrder<string> {
         this._customCycle = value;
     }
 
-    get cycle(): OfferCycle {
+    get cycle(): IOfferCycle {
         return this._cycle;
     }
 
-    set cycle(value: OfferCycle) {
+    set cycle(value: IOfferCycle) {
         this._cycle = value;
     }
 

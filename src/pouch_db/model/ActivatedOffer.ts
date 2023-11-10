@@ -1,4 +1,4 @@
-import {IActivatedOffer} from "user-credits";
+import {IActivatedOffer} from "@user-credits/core";
 
 export class ActivatedOffer implements IActivatedOffer {
     constructor(expires: Date, offerGroup: string, starts: Date, tokens: number) {

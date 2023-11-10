@@ -1,9 +1,9 @@
-import {IOffer, OfferCycle} from "user-credits";
+import {IOffer, IOfferCycle} from "@user-credits/core";
 
 import {BaseEntity} from "./BaseEntity";
 
 export class Offer extends BaseEntity implements IOffer<string> {
-    constructor(id: string, customCycle: number | null, cycle: OfferCycle, hasDependentOffers: boolean, kind: "subscription" | "tokens" | "expertise", name: string, offerGroup: string, overridingKey: string, popular: number, price: number, quantityLimit: number | null, tags: string[], tokenCount: number | null, unlockedBy: string[], weight: number) {
+    constructor(id: string, customCycle: number | null, cycle: IOfferCycle, hasDependentOffers: boolean, kind: "subscription" | "tokens" | "expertise", name: string, offerGroup: string, overridingKey: string, popular: number, price: number, quantityLimit: number | null, tags: string[], tokenCount: number | null, unlockedBy: string[], weight: number) {
         super(id);
         this._customCycle = customCycle;
         this._cycle = cycle;
@@ -23,7 +23,7 @@ export class Offer extends BaseEntity implements IOffer<string> {
 
 
     protected _customCycle: number | null;
-    protected _cycle: OfferCycle;
+    protected _cycle: IOfferCycle;
     protected _hasDependentOffers: boolean;
     protected _kind: "subscription" | "tokens" | "expertise";
     protected _name: string;
@@ -45,11 +45,11 @@ export class Offer extends BaseEntity implements IOffer<string> {
         this._customCycle = value;
     }
 
-    get cycle(): OfferCycle {
+    get cycle(): IOfferCycle {
         return this._cycle;
     }
 
-    set cycle(value: OfferCycle) {
+    set cycle(value: IOfferCycle) {
         this._cycle = value;
     }
 

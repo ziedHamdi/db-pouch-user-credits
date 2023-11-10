@@ -1,5 +1,5 @@
+import {IUserCredits, IUserCreditsDao} from "@user-credits/core";
 import * as PouchDB from 'pouchdb';
-import {IUserCredits, IUserCreditsDao} from "user-credits";
 
 import {UserCredits} from "../model";
 import {BasePouchDao} from "./BasePouchDao";

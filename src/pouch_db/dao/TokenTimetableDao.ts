@@ -1,5 +1,5 @@
+import {ITokenTimetableDao} from "@user-credits/core";
 import * as PouchDB from 'pouchdb';
-import {ITokenTimetableDao} from "user-credits";
 
 import {TokenTimetable} from "../model";
 import {BasePouchDao} from "./BasePouchDao";

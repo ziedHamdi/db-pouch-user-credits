@@ -1,4 +1,4 @@
-import {IUserCredits} from "user-credits";
+import {IUserCredits} from "@user-credits/core";
 
 import {ActivatedOffer} from "./ActivatedOffer";
 import {BaseEntity} from "./BaseEntity";
